@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chatgpt-space-broker
+  namespace: ai-workspaces
+  labels:
+    app.kubernetes.io/name: chatgpt-space-broker
+    app.kubernetes.io/part-of: enterprise-collaboration-mesh
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: chatgpt-space-broker
+  template:
+    metadata:
+      labels:
+        app: chatgpt-space-broker
+    spec:
+      containers:
+      - name: space-broker
+        image: ghcr.io/pradeeptalari14/chatgpt-space-broker:v1.0.0
+        ports:
+        - containerPort: 8080
+          name: websocket
+        env:
+        - name: SPACE_SYNC_BACKEND
+          value: "redis-cluster.cache.svc.cluster.local:6379"
+        - name: HEARTBEAT_INTERVAL_MS
+          value: "1000"
+        resources:
+          requests:
+            cpu: "500m"
+            memory: "1Gi"
+          limits:
+            cpu: "2"
+            memory: "4Gi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: chatgpt-space-broker
+  namespace: ai-workspaces
+spec:
+  type: ClusterIP
+  selector:
+    app: chatgpt-space-broker
+  ports:
+  - port: 8080
+    targetPort: 8080
+    name: websocket
