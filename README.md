@@ -48,6 +48,21 @@ flowchart TD
 
 ---
 
+## 💻 Infrastructure & Software Technology Stack
+
+| Layer | Technology & Tools | Production Role |
+|---|---|---|
+| **Real-Time State Synchronization** | Yjs CRDT, Automerge, WebSockets (WSS) | Conflict-free sub-15ms delta broadcasting across distributed human and agent peers |
+| **In-Memory Pub/Sub & Mesh State** | Redis 7.2 Cluster, Redis Streams | Ephemeral room session presence, heartbeat tracking, and agent event broadcasting |
+| **Multi-Agent Runtime Engine** | OpenAI GPT-6.1 Sol (Code), GPT-6 Luna (Routing) | Autonomous concurrent pair-programming and intelligent task delegation |
+| **Canvas Protocol & Tool Integration**| OpenAI Realtime Canvas Protocol, MCP | Standardized artifact synchronization and live code snippet execution |
+| **Distributed Concurrency & Leases** | Redlock Distributed Locking Algorithm | Temporary ownership acquisition for discrete canvas nodes preventing race edits |
+| **Ephemeral Sandbox Isolation** | Kubernetes Pods, gVisor microVMs | Isolated ephemeral Python/Bash runtime for agent artifact execution |
+| **Edge Ingress & Reverse Proxy** | Envoy Proxy, Cloudflare Zero Trust | Sticky-session WebSocket routing, TLS 1.3 termination, and DDoS rate limiting |
+| **Omnichannel Integrations** | Slack Bolt API, Microsoft Teams Bot Framework | Bi-directional thread mirroring and interactive notification cards |
+
+---
+
 ## 🎯 Where to Use (Real-World Enterprise Production Scenarios)
 
 1. **Autonomous Pair-Programming & Live PR Co-Drafting**:
