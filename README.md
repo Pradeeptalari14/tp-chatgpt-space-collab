@@ -1,3 +1,6 @@
+[![Ecosystem](https://img.shields.io/badge/Portfolio%20Ecosystem-341%20Studios-6366f1.svg)](https://pradeeptalari.me/projects/)
+[![Architecture DAG](https://img.shields.io/badge/Architecture-DAG%20%26%20Course-10b981.svg)](https://pradeeptalari.me/tools/repo-learning/)
+
 # ChatGPT Space & Multi-Agent Coworking Rooms (`tp-chatgpt-space-collab`)
 
 [![CI](https://github.com/Pradeeptalari14/tp-chatgpt-space-collab/actions/workflows/space-collab-ci.yml/badge.svg)](https://github.com/Pradeeptalari14/tp-chatgpt-space-collab/actions)
@@ -143,3 +146,6 @@ tp-chatgpt-space-collab/
 - **Heartbeat & Zombie Agent Eviction**: Agents that fail to emit heartbeats within 3,000 ms have their write leases revoked automatically to avoid canvas lock contention.
 - **CRDT Mutation Throttling**: Each participant is limited to 100 delta mutations/sec to protect against rogue agent infinite loops.
 - **Data Protection & ZDR Compliance**: Canvas state is encrypted with TLS 1.3 in-transit and AES-256 at-rest, adhering to Zero Data Retention standards.
+
+---
+*Synchronized with [ChatGPT Space Collaboration Studio Studio](https://pradeeptalari.me/tools/chatgpt-space-collaboration/) & [Repository Learning DAG](https://pradeeptalari.me/tools/repo-learning/) — [Talari Pradeep Portfolio](https://pradeeptalari.me)*
